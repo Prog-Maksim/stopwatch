@@ -1,3 +1,39 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="Head" TargetType="Label">
+        <Setter Property="Foreground" Value="#383C47"/>
+    </Style>
+    
+    <Style x:Key="MainWindows" TargetType="Border">
+        <Setter Property="Background" Value="#060B19"></Setter>
+    </Style>
+    
+    <Style x:Key="MainTimersStyle" TargetType="Run">
+        <Setter Property="Foreground" Value="#A769F5"/>
+    </Style>
+    
+    <Style x:Key="MainTimersStyle1" TargetType="Label">
+        <Setter Property="Foreground" Value="#A769F5"/>
+    </Style>
+    
+    <Style x:Key="shadowStyle" TargetType="Border">
+        <Setter Property="Background" Value="#060B19"></Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#383C47"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ImageStyle_1" TargetType="Image">
+        <Setter Property="Source" Value="Images/DarkTheme/refresh-arrow.png"></Setter>
+    </Style>
+    
+    <Style x:Key="ImageStyle_2" TargetType="Image">
+        <Setter Property="Source" Value="Images/DarkTheme/play-button.png"></Setter>
+    </Style>
+    
+    <Style x:Key="ImageStyle_3" TargetType="Image">
+        <Setter Property="Source" Value="Images/DarkTheme/flag.png"></Setter>
+    </Style>
 </ResourceDictionary>
