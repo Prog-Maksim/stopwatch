@@ -56,6 +56,8 @@ namespace stopwatch
 
         private void RefreshStopWatch(object sender, MouseButtonEventArgs e)
         {
+            if (state) return;
+            
             state = false;
 
             hour = 0;
@@ -64,9 +66,9 @@ namespace stopwatch
             millisecond = 0;
 
             UpdateText();
+            updateImage();
 
             stackpanel.Children.Clear();
-            ButtonImage.Source = new BitmapImage(new Uri("Resource/Images/play-button.png", UriKind.Relative));
         }
 
         private List<time_circle> frames = new List<time_circle>();
