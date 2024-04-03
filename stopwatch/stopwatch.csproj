@@ -67,6 +67,8 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="Theme\dark.xaml" />
+        <Page Include="Theme\light.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,12 +88,10 @@
         <None Include="App.config"/>
     </ItemGroup>
     <ItemGroup>
-      <Resource Include="Resource\Images\flag.png" />
-      <Resource Include="Resource\Images\play-button.png" />
-      <Resource Include="Resource\Images\refresh-arrow.png" />
-    </ItemGroup>
-    <ItemGroup>
-      <Resource Include="Resource\Images\pause.png" />
+      <Resource Include="Theme\Images\LightTheme\flag.png" />
+      <Resource Include="Theme\Images\LightTheme\pause.png" />
+      <Resource Include="Theme\Images\LightTheme\play-button.png" />
+      <Resource Include="Theme\Images\LightTheme\refresh-arrow.png" />
     </ItemGroup>
     <ItemGroup>
       <Resource Include="Resource\Images\cancel.png" />
@@ -100,6 +100,10 @@
     <ItemGroup>
       <Content Include=".gitignore" />
       <Content Include="DocumentationImages\img.png" />
+      <Resource Include="Theme\Images\DarkTheme\flag.png" />
+      <Resource Include="Theme\Images\DarkTheme\pause.png" />
+      <Resource Include="Theme\Images\DarkTheme\play-button.png" />
+      <Resource Include="Theme\Images\DarkTheme\refresh-arrow.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
