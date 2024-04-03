@@ -100,7 +100,6 @@
     <ItemGroup>
       <Content Include=".gitignore" />
       <Content Include="DocumentationImages\img.png" />
-      <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
