@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:frames="clr-namespace:stopwatch.Frames"
         mc:Ignorable="d"
         Title="StopWatch"
         Height="650" 
@@ -15,7 +14,8 @@
         Background="Transparent">
     <Border 
         CornerRadius="10" 
-        Background="#A769F5"
+        Style="{DynamicResource MainWindows}"
+        MouseLeftButtonDown="Border_MouseLeftButtonDown"
         MouseDown="Border_MouseDows">
         <Grid>
             <Grid.RowDefinitions>
@@ -46,19 +46,19 @@
             
             <Label 
                 Grid.Row="1"
-                Content="Секундомер"
                 FontFamily="Montserrat"
-                Foreground="#182E0E"
                 FontSize="20"
                 FontWeight="Bold"
+                Content="Секундомер"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Margin="0 0 0 130">
+                Margin="0 0 0 130"
+                Style="{DynamicResource Head}">
             </Label>
             
             <TextBlock Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 60">
-                <Run x:Name="MainTime" FontFamily="Montserrat" FontSize="50" FontWeight="Bold" Foreground="#B7F66A">00:00:00</Run>
-                <Run x:Name="Time" FontFamily="Montserrat" FontSize="35" FontWeight="Bold" Foreground="#B7F66A">,00</Run>
+                <Run x:Name="MainTime" FontFamily="Montserrat" FontSize="50" FontWeight="Bold" Style="{DynamicResource MainTimersStyle}">00:00:00</Run>
+                <Run x:Name="Time" FontFamily="Montserrat" FontSize="35" FontWeight="Bold" Style="{DynamicResource MainTimersStyle}">,00</Run>
             </TextBlock>
             
             <StackPanel
@@ -72,7 +72,7 @@
                     Height="30"
                     Cursor="Hand"
                     MouseLeftButtonDown="RefreshStopWatch"
-                    Source="Resource/Images/refresh-arrow.png">
+                    Style="{DynamicResource ImageStyle_1}">
                 </Image>
                 
                 <Image
@@ -82,7 +82,7 @@
                     Cursor="Hand"
                     Margin="15 0 15 0"
                     MouseLeftButtonDown="StartStopWatch"
-                    Source="Resource/Images/play-button.png">
+                    Style="{DynamicResource ImageStyle_2}">
                 </Image>
                 
                 <Image
@@ -90,7 +90,7 @@
                     Height="30"
                     Cursor="Hand"
                     MouseLeftButtonDown="FlagStopWatch"
-                    Source="Resource/Images/flag.png">
+                    Style="{DynamicResource ImageStyle_3}">
                 </Image>
             </StackPanel>
             
@@ -106,7 +106,7 @@
                 
                 <Label
                     Grid.Column="0"
-                    Foreground="#182E0E"
+                    Style="{DynamicResource Head}"
                     FontFamily="Montserrat"
                     FontWeight="Bold"
                     FontSize="10"
@@ -117,7 +117,7 @@
                 
                 <Label
                     Grid.Column="1"
-                    Foreground="#182E0E"
+                    Style="{DynamicResource Head}"
                     FontFamily="Montserrat"
                     FontWeight="Bold"
                     FontSize="10"
@@ -127,7 +127,7 @@
                 
                 <Label
                     Grid.Column="2"
-                    Foreground="#182E0E"
+                    Style="{DynamicResource Head}"
                     FontFamily="Montserrat"
                     FontWeight="Bold"
                     FontSize="10"

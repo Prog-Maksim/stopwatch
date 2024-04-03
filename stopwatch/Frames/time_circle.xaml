@@ -7,12 +7,12 @@
              Background="Transparent">
     <Border
         Margin="0 10 0 0"
-        Background="#A769F5"
+        Style="{DynamicResource shadowStyle}"
         CornerRadius="10"
         Width="330"
         Height="40">
         <Border.Effect>
-            <DropShadowEffect ShadowDepth="0" Direction="0" Color="#6F46A2" Opacity="0.5" BlurRadius="10"/>
+            <DropShadowEffect ShadowDepth="0" Direction="0" Opacity="0.5" BlurRadius="10"/>
         </Border.Effect>
         
         <Grid>
@@ -26,29 +26,37 @@
                 Grid.Column="0"
                 Content="{Binding Title}"
                 VerticalContentAlignment="Center"
-                Foreground="#B7F66A"
+                Style="{DynamicResource MainTimersStyle1}"
                 FontSize="11"
                 FontWeight="Bold"
                 Margin="5 0 0 0"
                 FontFamily="Montserrat">
             </Label>
             
-            <TextBlock
+            <Label
                 Grid.Column="1"
-                TextWrapping="Wrap"
+                Content="{Binding TimeFirst}"
+                VerticalContentAlignment="Center"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-                <Run Foreground="#B7F66A" FontSize="11" FontWeight="Bold" FontFamily="Montserrat" Text="{Binding TimeFirst}"></Run>
-            </TextBlock>
+                Style="{DynamicResource MainTimersStyle1}"
+                FontSize="11"
+                FontWeight="Bold"
+                Margin="5 0 0 0"
+                FontFamily="Montserrat">
+            </Label>
             
-            <TextBlock
+            
+            <Label
                 Grid.Column="2"
-                TextWrapping="Wrap"
+                Content="{Binding TimeLast}"
+                VerticalContentAlignment="Center"
                 HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Margin="0 0 20 0">
-                <Run Foreground="#B7F66A" FontSize="11" FontWeight="Bold" FontFamily="Montserrat" Text="{Binding TimeLast}"></Run>
-            </TextBlock>
+                Style="{DynamicResource MainTimersStyle1}"
+                FontSize="11"
+                FontWeight="Bold"
+                Margin="5 0 20 0"
+                FontFamily="Montserrat">
+            </Label>
         </Grid>
     </Border>
 </UserControl>
