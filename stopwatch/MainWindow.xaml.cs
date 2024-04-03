@@ -11,9 +11,12 @@ namespace stopwatch
 {
     public partial class MainWindow
     {
+        private string _theme = "light";
+        
         public MainWindow()
         {
             InitializeComponent();
+            Theme(_theme);
         }
 
         private void StartStopWatch(object sender, MouseButtonEventArgs e)
@@ -22,14 +25,32 @@ namespace stopwatch
             {
                 state = true;
 
+                updateImage();
                 startTimeAsync();
-                
-                ButtonImage.Source = new BitmapImage(new Uri("Resource/Images/pause.png", UriKind.Relative));
             }
             else
             {
                 state = false;
-                ButtonImage.Source = new BitmapImage(new Uri("Resource/Images/play-button.png", UriKind.Relative));
+                
+                updateImage();
+            }
+        }
+
+        private void updateImage()
+        {
+            if (state)
+            {
+                if (_theme == "light")
+                    ButtonImage.Source = new BitmapImage(new Uri("Theme/Images/LightTheme/pause.png", UriKind.Relative));
+                else
+                    ButtonImage.Source = new BitmapImage(new Uri("Theme/Images/DarkTheme/pause.png", UriKind.Relative));
+            }
+            else
+            {
+                if (_theme == "light")
+                    ButtonImage.Source = new BitmapImage(new Uri("Theme/Images/LightTheme/play-button.png", UriKind.Relative));
+                else
+                    ButtonImage.Source = new BitmapImage(new Uri("Theme/Images/DarkTheme/play-button.png", UriKind.Relative));
             }
         }
 
@@ -135,6 +156,24 @@ namespace stopwatch
         private void MinimizeWindow(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+        
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                _theme = (_theme == "dark") ? "light" : "dark";
+                Theme(_theme);
+            }
+        }
+        
+        private void Theme(string themeName)
+        {
+            updateImage();
+            var uri = new Uri("Theme/" + themeName + ".xaml", UriKind.Relative);
+            var resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
     }
 }
