@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="stopwatch.Frames.time_circle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Background="Transparent">
+    <Border
+        Margin="0 10 0 0"
+        Background="#A769F5"
+        CornerRadius="10"
+        Width="330"
+        Height="40">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0" Direction="0" Color="#6F46A2" Opacity="0.5" BlurRadius="10"/>
+        </Border.Effect>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Label
+                Grid.Column="0"
+                Content="{Binding Title}"
+                VerticalContentAlignment="Center"
+                Foreground="#B7F66A"
+                FontSize="11"
+                FontWeight="Bold"
+                Margin="5 0 0 0"
+                FontFamily="Montserrat">
+            </Label>
+            
+            <TextBlock
+                Grid.Column="1"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <Run Foreground="#B7F66A" FontSize="11" FontWeight="Bold" FontFamily="Montserrat" Text="{Binding TimeFirst}"></Run>
+            </TextBlock>
+            
+            <TextBlock
+                Grid.Column="2"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="0 0 20 0">
+                <Run Foreground="#B7F66A" FontSize="11" FontWeight="Bold" FontFamily="Montserrat" Text="{Binding TimeLast}"></Run>
+            </TextBlock>
+        </Grid>
+    </Border>
+</UserControl>
